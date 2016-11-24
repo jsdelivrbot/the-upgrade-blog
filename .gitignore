@@ -19,5 +19,6 @@
 # Ignore git and c9
 /.git
 /.c9
+/data
 
 
