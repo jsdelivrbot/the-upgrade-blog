@@ -1,3 +1,17 @@
+<% if params[:controller] != "main" %>  
+  <div class="ui large secondary pointing menu">
+    <a class="toc item">
+      <i class="sidebar icon"></i>
+    </a>
+    <%= link_to "Home", root_url, class: "item" %>
+    <%= link_to "Posts", posts_path, class: "#{params[:controller] == 'posts' ? 'active ' : ''}item" %>
+    <!--<div class="right item">-->
+    <!--  <a class="ui inverted button">Log in</a>-->
+    <!--  <a class="ui inverted button">Sign Up</a>-->
+    <!--</div>-->
+  </div>
+<% end %>
+  
 <!-- Following Menu -->
 <!--<div class="ui inverted large top fixed hidden menu">-->
 <!--  <div class="ui container">-->

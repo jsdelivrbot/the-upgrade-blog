@@ -10,7 +10,15 @@
 </head>
 <body>
   <%= render 'layouts/menu' %>
-  <%= yield %>
+  <div class="pusher">
+    <% if params[:controller] == "main" %>
+      <%= yield %>
+    <% else %>
+      <div class="ui container">
+        <%= yield %>
+      </div>
+    <% end %>
+  </div>
 
 </body>
 </html>

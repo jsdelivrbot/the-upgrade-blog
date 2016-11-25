@@ -18,7 +18,7 @@
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= post.title %></td>
-        <td><%= truncate(post.content, length: 100) %></td>
+        <td><%= truncate(post.content.html_safe, length: 100) %></td>
       </tr>
     <% end %>
   </tbody>
