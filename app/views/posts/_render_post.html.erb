@@ -1,0 +1,18 @@
+<div class="item post">
+  <div class="content">
+    <a class="header"><%= post.title %></a>
+    <div class="meta">
+      <span class="author"><%= "author" %></span> |
+      <span class="date"><%= post.date %></span> |
+      <span class="share"><i class="share alternate icon"></i></span>
+      <div class="ui right floated metrics">
+        <div id="money_savings_<%= post.id.to_s %>"><script>addProgressCircle('#money_savings_<%= post.id.to_s %>', 0.8, 'dollar');</script></div>
+        <div id="time_savings_<%= post.id.to_s %>"><script>addProgressCircle('#time_savings_<%= post.id.to_s %>', 0.25, 'clock');</script></div>
+        <div id="quality_add_<%= post.id.to_s %>"><script>addProgressCircle('#quality_add_<%= post.id.to_s %>', 0.5, 'leaf');</script></div>
+      </div>
+    </div>
+    <div class="description">
+      <%= post.content.html_safe %>
+    </div>
+  </div>
+</div>
