@@ -4,7 +4,8 @@
       <i class="sidebar icon"></i>
     </a>
     <%= link_to "Home", root_url, class: "item" %>
-    <%= link_to "Posts", posts_path, class: "#{params[:controller] == 'posts' ? 'active ' : ''}item" %>
+    <%= menu_link "Posts", posts_path %>
+    <%= menu_link "Users", users_path %>
     <!--<div class="right item">-->
     <!--  <a class="ui inverted button">Log in</a>-->
     <!--  <a class="ui inverted button">Sign Up</a>-->

@@ -1,4 +1,9 @@
 $(document).ready(function() {
+  
+  // Load Semantic UI elements keeping turbolinks in mind
+  document.addEventListener("turbolinks:load", function () {
+    bind_elements();
+  });
 
   // fix menu when passed
   $('.masthead').visibility({
@@ -15,6 +20,11 @@ $(document).ready(function() {
   $('.ui.sidebar').sidebar('attach events', '.toc.item');
 
 });
+
+function bind_elements() {
+  $(".ui.dropdown").dropdown();
+  $(".ui.checkbox").checkbox();
+}
 
 function addProgressCircle(element, percent, icon) {
 	var bar = new ProgressBar.Circle(element, {

@@ -15,6 +15,18 @@
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
+  <div class="fields">
+    <div class="twelve wide field">
+      <%= f.label :user_ids %>
+      <%= f.collection_select :user_ids, User.all, :id, :full_name, {}, class: "ui dropdown", multiple: true %>
+    </div>
+    <div class="four wide field">
+      <%= f.label :published %>
+      <div class="ui toggle checkbox">
+        <%= f.check_box :published, {}, "true", "false" %> 
+      </div>
+    </div>
+  </div>
   <div class="field">
     <%= f.label :content %>
     <%= f.trix_editor :content %>

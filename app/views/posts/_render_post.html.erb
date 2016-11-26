@@ -2,8 +2,8 @@
   <div class="content">
     <a class="header"><%= post.title %></a>
     <div class="meta">
-      <span class="author"><%= "author" %></span> |
-      <span class="date"><%= post.date %></span> |
+      <span class="author"><%= post.users.map{|x| x.full_name}.join(", ") %></span> |
+      <span class="date"><%= post.updated_at.strftime("%B %d, %Y") if post.updated_at %></span> |
       <span class="share"><i class="share alternate icon"></i></span>
       <div class="ui right floated metrics">
         <div id="money_savings_<%= post.id.to_s %>"><script>addProgressCircle('#money_savings_<%= post.id.to_s %>', 0.8, 'dollar');</script></div>

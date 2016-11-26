@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Posts</h1>
-
+<h1>Posts</h1>
+<%= link_to 'New Post', new_post_path, class: "ui button" %>
 <table class="ui table">
   <thead>
     <tr>
@@ -23,7 +23,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path, class: "ui button" %>
