@@ -1,0 +1,26 @@
+<div class="ui inverted vertical footer segment">
+  <div class="ui container">
+    <div class="ui stackable inverted divided equal height stackable grid">
+      <div class="four wide column">
+        <h3 class="ui inverted header">The Upgrade</h3>
+        <div class="ui inverted link list">
+          <%= link_to "Our Story", our_story_path, class: "item" %>
+          <%= link_to "Contributors", contributors_path %>
+          <%= link_to "Contributor Login", posts_path, class: "item" %>
+        </div>
+      </div>
+      <div class="twelve wide column">
+        <h3 class="ui inverted header">Follow</h3>
+        <p>Want upgrades delivered to your inbox? Enter your email below. No spam. Promise.</p>
+        <%= form_tag '/subscribe', class: "ui form" do %>
+          <div class="inline fields">
+            <div class="ten wide field">
+              <%= email_field_tag :email, "", class: "ui input" %>
+            </div>
+            <%= submit_tag "Subscribe", class: "ui blue button" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

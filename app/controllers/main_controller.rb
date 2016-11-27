@@ -4,4 +4,10 @@ class MainController < ApplicationController
   def index
     @posts = Post.published
   end
+  
+  def our_story
+  end
+  
+  def contributors
+  end
 end

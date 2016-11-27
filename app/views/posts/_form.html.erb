@@ -11,20 +11,35 @@
     </div>
   <% end %>
   
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
   <div class="fields">
     <div class="twelve wide field">
-      <%= f.label :user_ids %>
-      <%= f.collection_select :user_ids, User.all, :id, :full_name, {}, class: "ui dropdown", multiple: true %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
     </div>
-    <div class="four wide field">
+    <div class="one wide field"></div>
+    <div class="three wide field">
       <%= f.label :published %>
       <div class="ui toggle checkbox">
         <%= f.check_box :published, {}, "true", "false" %> 
       </div>
+    </div>
+  </div>  
+  <div class="fields">
+    <div class="six wide field">
+      <%= f.label :user_ids, "Authors" %>
+      <%= f.collection_select :user_ids, User.all, :id, :full_name, {}, class: "ui dropdown", multiple: true %>
+    </div>
+    <div class="three wide field">
+      <%= f.label :time_savings %>
+      <%= f.select :time_savings, options_for_select(value_scale, f.object.time_savings), {}, class: "ui dropdown" %>
+    </div>
+    <div class="three wide field">
+      <%= f.label :money_savings %>
+      <%= f.select :money_savings, options_for_select(value_scale, f.object.money_savings), {}, class: "ui dropdown" %>
+    </div>
+    <div class="three wide field">
+      <%= f.label :quality_add %>
+      <%= f.select :quality_add, options_for_select(value_scale, f.object.quality_add), {}, class: "ui dropdown" %>
     </div>
   </div>
   <div class="field">

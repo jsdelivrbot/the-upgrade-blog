@@ -2,13 +2,13 @@
   <div class="content">
     <a class="header"><%= post.title %></a>
     <div class="meta">
-      <span class="author"><%= post.users.map{|x| x.full_name}.join(", ") %></span> |
-      <span class="date"><%= post.updated_at.strftime("%B %d, %Y") if post.updated_at %></span> |
+      <span class="author"><%= post.users.map{|x| x.full_name}.join(", ") %></span>
+      <span class="date"><%= post.updated_at.strftime("%B %d, %Y") if post.updated_at %></span>
       <span class="share"><i class="share alternate icon"></i></span>
       <div class="ui right floated metrics">
-        <div id="money_savings_<%= post.id.to_s %>"><script>addProgressCircle('#money_savings_<%= post.id.to_s %>', 0.8, 'dollar');</script></div>
-        <div id="time_savings_<%= post.id.to_s %>"><script>addProgressCircle('#time_savings_<%= post.id.to_s %>', 0.25, 'clock');</script></div>
-        <div id="quality_add_<%= post.id.to_s %>"><script>addProgressCircle('#quality_add_<%= post.id.to_s %>', 0.5, 'leaf');</script></div>
+        <div id="time_savings_<%= post.id.to_s %>"><script>addProgressCircle('#time_savings_<%= post.id.to_s %>', <%= post.time_savings * 0.25 %>, 'dollar');</script></div>
+        <div id="money_savings_<%= post.id.to_s %>"><script>addProgressCircle('#money_savings_<%= post.id.to_s %>', <%= post.money_savings * 0.25 %>, 'clock');</script></div>
+        <div id="quality_add_<%= post.id.to_s %>"><script>addProgressCircle('#quality_add_<%= post.id.to_s %>', <%= post.quality_add * 0.25 %>, 'leaf');</script></div>
       </div>
     </div>
     <div class="description">

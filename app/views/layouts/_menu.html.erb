@@ -1,15 +1,10 @@
-<% if params[:controller] != "main" %>  
-  <div class="ui large secondary pointing menu">
-    <a class="toc item">
-      <i class="sidebar icon"></i>
-    </a>
-    <%= link_to "Home", root_url, class: "item" %>
-    <%= menu_link "Posts", posts_path %>
-    <%= menu_link "Users", users_path %>
-    <!--<div class="right item">-->
-    <!--  <a class="ui inverted button">Log in</a>-->
-    <!--  <a class="ui inverted button">Sign Up</a>-->
-    <!--</div>-->
+<% unless params[:controller] == "main" and params[:action] == "index" %>  
+  <div class="ui inverted segment">
+    <div class="ui large inverted top fixed menu">
+      <%= link_to image_tag('logo-small-white'), root_url, id: "menu_logo", class: "item" %>
+      <%= menu_link "Posts", posts_path %>
+      <%= menu_link "Users", users_path %>
+    </div>
   </div>
 <% end %>
   

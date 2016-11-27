@@ -1,21 +1,4 @@
-<div class="ui vertical masthead center aligned segment">
-
-  <!--<div class="ui container">-->
-  <!--  <div class="ui large secondary pointing menu">-->
-  <!--    <a class="toc item">-->
-  <!--      <i class="sidebar icon"></i>-->
-  <!--    </a>-->
-  <!--    <a class="active item">Home</a>-->
-  <!--    <a class="item">Work</a>-->
-  <!--    <a class="item">Company</a>-->
-  <!--    <a class="item">Careers</a>-->
-  <!--    <div class="right item">-->
-  <!--      <a class="ui inverted button">Log in</a>-->
-  <!--      <a class="ui inverted button">Sign Up</a>-->
-  <!--    </div>-->
-  <!--  </div>-->
-  <!--</div>-->
-
+<div id="home" class="ui vertical masthead center aligned segment">
   <div class="ui text container">
     <h1 class="ui inverted header main_logo">
       <%= image_tag "logo.png" %>
@@ -24,18 +7,17 @@
     <div class="ui huge primary button">Subscribe</div>
   </div>
   <div class="bottom right copyright">Copyright: <a href='http://www.123rf.com/profile_belchonock'>belchonock / 123RF Stock Photo</a></div>
-  
 </div>
 
-<div class="ui bottom attached segment">
-  <div class="ui big basic secondary three item menu">
+<div id="filters" class="ui bottom attached segment">
+  <div class="ui basic secondary three item menu">
     <a class="item">Time Savers</a>
     <a class="item">Money Savers</a>
     <a class="item">Quality Adds</a>
   </div>
 </div>
 
-<div class="ui vertical stripe segment">
+<div class="ui vertical segment">
   
   <div class="ui container">
     <div class="ui very relaxed items">
@@ -46,35 +28,4 @@
   </div>
 </div>
 
-<div class="ui inverted vertical footer segment">
-  <div class="ui container">
-    <div class="ui stackable inverted divided equal height stackable grid">
-      <div class="three wide column">
-        <h4 class="ui inverted header">About</h4>
-        <div class="ui inverted link list">
-          <a href="#" class="item">Our Story</a>
-          <a href="#" class="item">Contact Us</a>
-        </div>
-      </div>
-      <div class="three wide column">
-        <h4 class="ui inverted header">Team</h4>
-        <div class="ui inverted link list">
-          <a href="#" class="item">Contributors</a>
-          <%= link_to "Contributor Login", posts_path, class: "item" %>
-        </div>
-      </div>
-      <div class="seven wide column">
-        <h4 class="ui inverted header">Follow</h4>
-        <p>Want upgrades delivered to your inbox? Enter your email below. No spam. Promise.</p>
-        <%= form_tag '/subscribe', class: "ui form" do %>
-          <div class="inline fields">
-            <div class="ten wide field">
-              <%= email_field_tag :email, "", class: "ui input" %>
-            </div>
-            <%= submit_tag "Subscribe", class: "ui blue button" %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render 'layouts/footer' %>
