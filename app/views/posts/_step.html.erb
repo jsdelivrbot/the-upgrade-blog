@@ -1,0 +1,11 @@
+<div class='item'>
+  <div class='inline fields'>
+    <div class='fifteen wide field'>
+      <%= step.text_field :description %>
+    </div>
+    <div class='field'>
+      <%= step.hidden_field :_destroy %>
+      <%= link_to content_tag(:i, nil, class: "large remove icon link icon"), '#', class: "remove_step" %>
+    </div>
+  </div>
+</div>

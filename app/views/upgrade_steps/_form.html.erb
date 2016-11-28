@@ -1,0 +1,17 @@
+<%= form_for(@upgrade_step) do |f| %>
+  <% if @upgrade_step.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@upgrade_step.errors.count, "error") %> prohibited this upgrade_step from being saved:</h2>
+
+      <ul>
+      <% @upgrade_step.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

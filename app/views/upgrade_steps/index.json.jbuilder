@@ -1,0 +1,1 @@
+json.array! @upgrade_steps, partial: 'upgrade_steps/upgrade_step', as: :upgrade_step

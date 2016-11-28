@@ -1,0 +1,1 @@
+json.partial! "upgrade_steps/upgrade_step", upgrade_step: @upgrade_step

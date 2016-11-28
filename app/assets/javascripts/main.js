@@ -1,30 +1,23 @@
 $(document).ready(function() {
   
-  // Load Semantic UI elements keeping turbolinks in mind
-  document.addEventListener("turbolinks:load", function () {
-    bind_elements();
-  });
+  $(".ui.dropdown").dropdown();
+  $(".ui.checkbox").checkbox();
 
   // fix menu when passed
-  $('#home.masthead').visibility({
-    once: false,
-    onBottomPassed: function() {
-      $('.fixed.menu').transition('fade in');
-    },
-    onBottomPassedReverse: function() {
-      $('.fixed.menu').transition('fade out');
-    }
-  });
+  // $('#home.masthead').visibility({
+  //   once: false,
+  //   onBottomPassed: function() {
+  //     $('.fixed.menu').transition('fade in');
+  //   },
+  //   onBottomPassedReverse: function() {
+  //     $('.fixed.menu').transition('fade out');
+  //   }
+  // });
 
   // create sidebar and attach to menu open
   $('.ui.sidebar').sidebar('attach events', '.toc.item');
 
 });
-
-function bind_elements() {
-  $(".ui.dropdown").dropdown();
-  $(".ui.checkbox").checkbox();
-}
 
 function addProgressCircle(element, percent, icon) {
 	var bar = new ProgressBar.Circle(element, {

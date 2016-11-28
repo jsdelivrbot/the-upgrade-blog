@@ -46,8 +46,16 @@
     <%= f.label :content %>
     <%= f.trix_editor :content %>
   </div>
-
+  <h4 class="ui dividing header">Steps</h4>
+  <div id="post_steps" class="ui small list" data-post="<%= @post.id.to_s %>">
+    <%= f.fields_for :upgrade_steps do |step| %>
+      <%= render "posts/step", step: step %>
+    <% end %>
+  </div>
+  <div class="field">
+    <%= link_to_add_step "Add Step", f, :upgrade_steps %>
+  </div>
   <div class="actions">
-    <%= f.submit "Save", class: "ui grey button" %>
+    <%= f.submit "Save", class: "ui blue button" %>
   </div>
 <% end %>

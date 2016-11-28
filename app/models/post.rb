@@ -3,6 +3,8 @@ class Post
   include Mongoid::Timestamps
   
   has_and_belongs_to_many :users
+  embeds_many :upgrade_steps
+  accepts_nested_attributes_for :upgrade_steps, allow_destroy: true
   
   field :title
   field :content

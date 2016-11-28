@@ -15,10 +15,12 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @post.upgrade_steps.build
   end
 
   # GET /posts/1/edit
   def edit
+    @post.upgrade_steps.build if @post.upgrade_steps.empty?
   end
 
   # POST /posts
@@ -69,6 +71,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.fetch(:post, {}).permit(:title, :content, :published, :time_savings, :money_savings, :quality_add, :user_ids => [])
+      params.fetch(:post, {}).permit(:title, :content, :published, :time_savings, :money_savings, :quality_add, 
+      :upgrade_steps_attributes => [:id, :description, :_destroy], :user_ids => [])
     end
 end
