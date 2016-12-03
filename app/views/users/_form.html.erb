@@ -25,6 +25,18 @@
     <%= f.label :access_level %>
     <%= f.select :access_level, access_levels, {include_blank: "Select One"}, class: "ui dropdown" %>
   </div>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
 
   <div class="actions">
     <%= f.submit "Save", class: "ui grey button" %>

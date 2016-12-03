@@ -4,6 +4,13 @@
       <%= link_to image_tag('logo-small-white'), root_url, id: "menu_logo", class: "item" %>
       <%= menu_link "Posts", posts_path %>
       <%= menu_link "Users", users_path %>
+      <% if current_user %>
+        Logged in as <%= current_user.email %>.
+        <%= link_to "Log Out", logout_path %>
+      <% else %>
+        <%= link_to "Sign Up", signup_path %> or
+        <%= link_to "Log In", login_path %>
+      <% end %>
     </div>
   </div>
 <% end %>
