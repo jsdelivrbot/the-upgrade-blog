@@ -1,15 +1,25 @@
-<h1>Log In</h1>
-
-<div class="ui container">
-  <%= form_tag sessions_path, class: "ui form" do %>
-    <div class="field">
-      <%= label_tag :email %><br />
-      <%= text_field_tag :email, params[:email] %>
+<div class="ui middle aligned center aligned grid">
+  <div id="login_form" class="column">
+    <%= render "layouts/flash_messages" %>
+    <div class="ui basic segment">
+      <%= link_to (image_tag "logo-mid-black", id: "login_logo"), root_path %>
     </div>
-    <div class="field">
-      <%= label_tag :password %><br />
-      <%= password_field_tag :password %>
-    </div>
-    <div class="actions"><%= submit_tag "Log In" %></div>
-  <% end %>
+    <%= form_tag sessions_path, class: "ui large form" do %>
+      <div class="ui stacked padded segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <%= text_field_tag :email, params[:email], placeholder: "email" %>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <%= password_field_tag :password, nil, placeholder: "password" %>
+          </div>
+        </div>
+        <div class="actions"><%= submit_tag "LOGIN", class: "ui blue fluid button" %></div>
+      </div>
+    <% end %>
+  </div>
 </div>

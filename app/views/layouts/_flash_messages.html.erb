@@ -1,0 +1,15 @@
+<% if flash[:error] or flash[:alert] %>
+    <div class="ui error message">
+      <div class="header">
+        <%= flash[:error] %><%= flash[:alert].to_s.html_safe %>
+      </div>
+    </div>
+<% end %>
+
+<% if flash[:success] or flash[:notice] %>
+    <div class="ui success message">
+      <div class="header">
+        <%= flash[:success] %><%= flash[:notice].to_s.html_safe %>
+      </div>
+    </div>
+<% end %>
