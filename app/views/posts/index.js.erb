@@ -1,0 +1,5 @@
+postsContainer = $("#posts .items");
+postsContainer.find(".item").fadeOut();
+<% @posts.each do |post| %>
+  postsContainer.append("<%= j render 'posts/render_post', post: post %>");
+<% end %>

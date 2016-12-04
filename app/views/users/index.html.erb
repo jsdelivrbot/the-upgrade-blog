@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Users</h1>
-<%= link_to 'New User', new_user_path, class: "ui button" %>
+<%= link_to 'New User', new_user_path, class: "ui blue button" %>
 <table class="ui table">
   <thead>
     <tr>
@@ -15,9 +15,9 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="action"><%= link_to (content_tag :i, nil, class: "file text outline icon"), user %></td>
+        <td class="action"><%= link_to (content_tag :i, nil, class: "edit icon"), edit_user_path(user) %></td>
+        <td class="action"><%= link_to (content_tag :i, nil, class: "remove icon"), user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= user.last_name %></td>
         <td><%= user.first_name %></td>
         <td><%= user.access_level %></td>

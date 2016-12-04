@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Posts</h1>
-<%= link_to 'New Post', new_post_path, class: "ui button" %>
+<%= link_to 'New Post', new_post_path, class: "ui blue button" %>
 <table class="ui table">
   <thead>
     <tr>
@@ -14,9 +14,9 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="action"><%= link_to (content_tag :i, nil, class: "file text outline icon"), post %></td>
+        <td class="action"><%= link_to (content_tag :i, nil, class: "edit icon"), edit_post_path(post) %></td>
+        <td class="action"><%= link_to (content_tag :i, nil, class: "remove icon"), post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= post.title %></td>
         <td><%= truncate(post.content.html_safe, length: 100) %></td>
       </tr>

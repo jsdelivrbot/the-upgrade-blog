@@ -10,12 +10,12 @@
 </div>
 
   <div id="blog_filters" class="ui bottom attached massive three item menu">
-    <a class="item"><i class="clock icon"></i>TIME SAVERS</a>
-    <a class="item"><i class="dollar icon"></i>MONEY SAVERS</a>
-    <a class="item"><i class="leaf icon"></i>QUALITY ADDS</a>
+    <%= post_filter("time_savings", "TIME SAVERS", "clock") %>
+    <%= post_filter("money_savings", "MONEY SAVERS", "dollar") %>
+    <%= post_filter("quality_add", "QUALITY ADDS", "leaf") %>
   </div>
 
-<div class="ui vertical segment">
+<div id="posts" class="ui vertical segment">
   
   <div class="ui container">
     <div class="ui very relaxed items">

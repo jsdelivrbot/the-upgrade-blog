@@ -3,9 +3,13 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
-  # GET /posts.json
+  # GET /posts.js
   def index
-    @posts = Post.all
+    @posts = Post.filter(params[:filter]).search(params[:search])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /posts/1

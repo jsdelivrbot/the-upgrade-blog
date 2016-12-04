@@ -16,4 +16,21 @@ class Post
   default_scope ->{order(created_at: :desc)}
   scope :published, ->{where(published: true)}
   scope :unpublished, ->{ne(published:true)}
+  
+  def self.search(search_params)
+    if search_params
+      any_of({email: /#{search_params}/i}, {first_name: /#{search_params}/i}, {last_name: /#{search_params}/i})
+    else
+      scoped
+    end
+  end
+  
+  def self.filter(filter)
+    
+    if filter
+      where(filter.to_sym.gt => 0)
+    else
+      scoped
+    end
+  end
 end
