@@ -29,13 +29,19 @@
     <%= f.label :email %>
     <%= f.email_field :email %>
   </div>
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+  <div class="two fields">
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <div class="field">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </div>
   </div>
   <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.label :subscription_ids, "Subscriptions" %>
+    <%= f.collection_select :subscription_ids, Subscription.all, :id, :name, {}, class: "ui dropdown", multiple: true %>
   </div>
 
   <div class="actions">

@@ -1,4 +1,4 @@
-<%= form_for(subscription) do |f| %>
+<%= form_for(subscription, html: { class: "ui form" }) do |f| %>
   <% if subscription.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(subscription.errors.count, "error") %> prohibited this subscription from being saved:</h2>
@@ -20,8 +20,13 @@
     <%= f.label :description %>
     <%= f.text_field :description %>
   </div>
+  
+  <div class="field">
+    <%= f.label :user_ids, "Users" %>
+    <%= f.collection_select :user_ids, User.all, :id, :full_name, {}, class: "ui dropdown", multiple: true %>
+  </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Save", class: "ui blue button" %>
   </div>
 <% end %>

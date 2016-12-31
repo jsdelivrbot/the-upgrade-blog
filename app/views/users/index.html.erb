@@ -5,7 +5,7 @@
 <table class="ui table">
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
       <th>First Name</th>
       <th>Last Name</th>
       <th>Access Level</th>
@@ -15,7 +15,6 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td class="action"><%= link_to (content_tag :i, nil, class: "file text outline icon"), user %></td>
         <td class="action"><%= link_to (content_tag :i, nil, class: "edit icon"), edit_user_path(user) %></td>
         <td class="action"><%= link_to (content_tag :i, nil, class: "remove icon"), user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= user.last_name %></td>
