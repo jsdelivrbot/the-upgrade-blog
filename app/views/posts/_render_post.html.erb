@@ -1,25 +1,57 @@
-<div class="item post">
-  <div class="content">
-    <a class="header"><%= post.title %></a>
-    <div class="meta">
-      <% unless post.users.empty? %>
-        <span class="author"><%= post.users.map{|x| x.full_name}.join(", ") %></span>
-      <% end %>
-      <span class="date"><%= post.updated_at.strftime("%B %d, %Y") if post.updated_at %></span>
-      <span class="share"><i class="share alternate icon"></i></span>
-      <div class="ui right floated metrics">
-        <div id="time_savings_<%= post.id.to_s %>"></div>
-        <div id="money_savings_<%= post.id.to_s %>"></div>
-        <div id="quality_add_<%= post.id.to_s %>"></div>
+<div class="ui basic segment post_segment">
+  <div class="ui right rail">
+    <div class="ui sticky">
+      <div class="ui card">
+        <div class="content steps_header">
+          <div class="header">UPGRADE STEPS</div>
+        </div>
+        <div class="content">
+          <% if post.prerequisites %>
+            <strong>Prerequisites:</strong> <%= post.prerequisites.html_safe %>
+          <% end %>
+          <ol class="steps_list">
+            <% post.upgrade_steps.each do |step| %>
+              <li><%= step.description %></li>
+            <% end %>
+          </ol>
+          <div class="ui small feed">
+            <div id="geek_factor_<% post.id.to_s %>"></div>
+            <div id="time_savings_<% post.id.to_s %>"></div>
+            <div id="money_savings_<% post.id.to_s %>"></div>
+            <div id="quality_add_<% post.id.to_s %>"></div>
+          </div>
+        </div>
+        <div class="extra content">
+          <button class="ui big fluid grey button">FINISH</button>
+        </div>
       </div>
     </div>
-    <div class="description">
-      <%= post.content.html_safe %>
+  </div>
+  <div id="context_<%= post.id.to_s %>">
+    <div class="item post">
+      <div class="content">
+        <a class="header"><%= post.title %></a>
+        <% if user_is_editor? %>
+          <%= link_to (content_tag :i, nil, class: "edit icon"), edit_post_path(post) %>
+         <% end %>
+        <div class="meta">
+          <% unless post.users.empty? %>
+            <span class="author"><%= post.users.map{|x| x.full_name}.join(", ") %></span>
+          <% end %>
+          <span class="date"><%= post.updated_at.strftime("%B %d, %Y") if post.updated_at %></span>
+          <span class="share"><i class="share alternate icon"></i></span>
+        </div>
+        <div class="description">
+          <%= post.content.html_safe %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <script>
+  sticky('#context_<%= post.id.to_s %>');
+  geekFactor('#geek_factor_<%= post.id.to_s %>', 4);
   addProgressCircle('#time_savings_<%= post.id.to_s %>', <%= post.time_savings * 0.25 %>, 'dollar');
   addProgressCircle('#money_savings_<%= post.id.to_s %>', <%= post.money_savings * 0.25 %>, 'clock');
   addProgressCircle('#quality_add_<%= post.id.to_s %>', <%= post.quality_add * 0.25 %>, 'leaf');

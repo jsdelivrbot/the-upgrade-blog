@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require trix
+//= require ckeditor/init
 //= require semantic-ui
+//= require highcharts
 //= require_tree .

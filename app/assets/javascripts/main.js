@@ -8,6 +8,64 @@ $(document).ready(function() {
 
 });
 
+function sticky(selector){
+  $('.ui.sticky').sticky({ context: selector });
+}
+
+function geekFactor(selector, factor) {
+    $(selector).highcharts({
+      chart: {
+        type: 'column',
+        spacingBottom: 0,
+        spacingTop: 0,
+        spacingLeft: 0,
+        spacingRight: 0
+      },
+      title: {
+        text: ''
+      },
+      xAxis: {
+        categories: [''],
+        tickWidth: 0,
+        labels: {
+          enabled: false
+        }
+      },
+      yAxis: {
+        max: 10,
+        tickPixelInterval: 500,
+        title: {
+          enabled: false
+        },
+        labels: {
+          enabled: false
+        }
+      },
+      plotOptions: {
+        series: {
+          stacking: 'normal'
+        }
+      },
+      legend: {
+        enabled: false
+      },
+      credits: {
+        enabled: false
+      },
+      exporting: {
+        enabled: false
+      },
+      tooltip: {
+        enabled: false
+      },
+      series: [{
+        name: '',
+        data: [factor],
+        color: '#7cb5ec'
+      }]
+    });
+}
+
 function addProgressCircle(element, percent, icon) {
 	var bar = new ProgressBar.Circle(element, {
 	  color: '#aaa',

@@ -29,6 +29,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      # UserMailer.send_post(@user).deliver_now
       session[:user_id] = @user.id
       redirect_to root_url, notice: "Thank you for signing up!"
     else

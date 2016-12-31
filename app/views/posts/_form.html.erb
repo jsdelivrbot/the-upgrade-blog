@@ -44,10 +44,14 @@
   </div>
   <div class="field">
     <%= f.label :content %>
-    <%= f.trix_editor :content %>
+    <%= f.cktext_area :content %>
   </div>
   <h4 class="ui dividing header">Steps</h4>
   <div id="post_steps" class="ui small list" data-post="<%= @post.id.to_s %>">
+    <div class="field">
+      <%= f.label :prerequisites %>
+      <%= f.cktext_area :prerequisites %>
+    </div>
     <%= f.fields_for :upgrade_steps do |step| %>
       <%= render "posts/step", step: step %>
     <% end %>

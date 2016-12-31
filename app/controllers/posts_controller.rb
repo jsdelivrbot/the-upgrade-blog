@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :authorize, only: [:edit, :update]
+  before_filter :authorize, except: [:show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
@@ -77,6 +77,6 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.fetch(:post, {}).permit(:title, :content, :published, :time_savings, :money_savings, :quality_add, 
-      :upgrade_steps_attributes => [:id, :description, :_destroy], :user_ids => [])
+      :prerequisites, :upgrade_steps_attributes => [:id, :description, :_destroy], :user_ids => [])
     end
 end

@@ -13,7 +13,8 @@ gem 'omniauth-auth0', '~> 1.4.2'
 
 gem 'sass-rails', '~> 5.0'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
-gem 'trix'
+gem 'ckeditor'
+gem 'highcharts-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views

@@ -12,6 +12,7 @@ class Post
   field :time_savings, type: Integer
   field :money_savings, type: Integer
   field :quality_add, type: Integer
+  field :prerequisites
   
   default_scope ->{order(created_at: :desc)}
   scope :published, ->{where(published: true)}

@@ -2,23 +2,49 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.metrics div { 
-  width: 50px; 
-  height: 50px; 
-  display: inline-block;
-  margin: 20px;
-  position: relative;
-  i { margin: 16px 8px !important; }
-}
-
-.very.relaxed.items .item { margin-bottom: 50px; }
-.post {
-  .header { 
-    font-family: 'Raleway' !important;
-    font-size: 2em !important; 
+#posts {
+  .metrics { 
+    float: right;
+    display: inline-block;
+    margin: 20px;
+    position: relative;
+    i { margin: 16px 8px !important; }
+    div[id^="geek_factor_"] { height: 70px; }
   }
-  .content .meta {
-    span { margin-right: 0.5em !important; }
-    span.date { font-style: italic; }
+  
+  .very.relaxed.items {
+    .post_segment { 
+      width: 800px; 
+      .sticky { 
+        width: 300px; 
+        .steps_header { background-color: #2185D0; }
+        .header { 
+          font-family: 'Raleway', 'Lato', 'Helvetica', sans-serif; 
+          text-align: center;
+          color: white;
+        }
+        .content { font-size: 1.1rem; }
+        .steps_list { font-size: 1.2rem; padding-left: 30px; }
+      }
+      .item { 
+        margin-bottom: 50px; 
+        .header { 
+          font-family: 'Raleway', 'Lato', 'Helvetica', sans-serif;
+          font-weight: bold;
+          font-size: 2em !important; 
+          color: black;
+        }
+        .content {
+          .meta {
+            margin: 15px 0;
+            span { margin-right: 0.5em !important; }
+            span.date { font-style: italic; }
+          }
+          .description { line-height: 1.3em; }
+        } 
+        .edit.icon { display: none; margin-left: 10px; }
+      }
+    }
   }
+  
 }

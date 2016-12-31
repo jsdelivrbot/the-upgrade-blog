@@ -4,6 +4,7 @@ class User
   include Mongoid::Timestamps
   
   has_and_belongs_to_many :posts
+  has_and_belongs_to_many :subscriptions
   
   # attr_accessor :first_name, :last_name, :email, :access_level, :password, :password_confirmation
   
