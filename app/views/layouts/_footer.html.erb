@@ -11,14 +11,7 @@
       <div class="twelve wide column">
         <h3 class="ui inverted header">Follow</h3>
         <p>Want upgrades delivered to your inbox? Enter your email below. No spam. Promise.</p>
-        <%= form_tag '/subscribe', class: "ui form" do %>
-          <div class="inline fields">
-            <div class="six wide field">
-              <%= email_field_tag :email, "", class: "ui input" %>
-            </div>
-            <%= submit_tag "Subscribe", class: "ui blue button" %>
-          </div>
-        <% end %>
+        <%= render "layouts/subscribe_form" %>
       </div>
     </div>
   </div>

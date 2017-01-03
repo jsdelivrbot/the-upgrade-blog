@@ -3,6 +3,10 @@
   img { width: 100px; }
 }
 
+#subscribe_form { width: 320px; margin: 0 auto; }
+#subscribe_email { max-width: 200px; }
+#subscribe_button { width: 120px !important; text-align: center; }
+
 #blog_filters .item { font-weight: bold; }
 
 .post .content { 
@@ -33,7 +37,7 @@
   }
 }
 
-#home, #our_story {
+#home, #about {
   background: url(<%= asset_path "awesome_fish.jpg" %>) no-repeat center center fixed !important;
   -webkit-background-size: cover !important;
   -moz-background-size: cover !important;
@@ -41,7 +45,7 @@
   background-size: cover !important;
 }
 
-#our_story, #contributors {
+#about, #contributors {
   min-height: 300px;
   h1 { 
     margin-top: 2em; 
@@ -50,9 +54,9 @@
   }
 }
 
-#our_story { h1 { color: black; } }
+#about { h1 { color: black; } }
 
-#our_story_content, #contributors_content { margin: 30px auto; border: none; }
+#about_content, #contributors_content { margin: 30px auto; border: none; }
 
 #contributors { 
   background: url(<%= asset_path "typewriter.png" %>) no-repeat center center fixed !important;

@@ -60,6 +60,14 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def create_and_subscribe
+    if User.create_and_subscribe(params[:email])
+      redirect_to root_url
+    else
+      redirect_to root_url
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

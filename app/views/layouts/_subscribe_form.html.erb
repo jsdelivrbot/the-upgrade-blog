@@ -1,0 +1,6 @@
+<%= form_tag create_and_subscribe_user_path, class: "ui form" do %>
+  <div class="ui fluid action input">
+    <%= email_field_tag :email, "", placeholder: "Email", id: "subscribe_email" %>
+    <%= submit_tag "SUBSCRIBE", class: "ui blue button", id: "subscribe_button" %>
+  </div>
+<% end %>

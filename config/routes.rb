@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   
   resources :users
+  post 'create_and_subscribe', to: "users#create_and_subscribe", as: "create_and_subscribe_user"
   resources :sessions
   resources :posts do 
     resources :upgrade_steps

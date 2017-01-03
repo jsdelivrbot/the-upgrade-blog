@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th colspan="2"></th>
+      <th>Email</th>
       <th>First Name</th>
       <th>Last Name</th>
       <th>Access Level</th>
@@ -17,6 +18,7 @@
       <tr>
         <td class="action"><%= link_to (content_tag :i, nil, class: "edit icon"), edit_user_path(user) %></td>
         <td class="action"><%= link_to (content_tag :i, nil, class: "remove icon"), user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= user.email %></td>
         <td><%= user.last_name %></td>
         <td><%= user.first_name %></td>
         <td><%= user.access_level %></td>
