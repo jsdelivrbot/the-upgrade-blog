@@ -4,29 +4,34 @@
       <h2><%= pluralize(subscription.errors.count, "error") %> prohibited this subscription from being saved:</h2>
 
       <ul>
-      <% subscription.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% subscription.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
+  
+  <div class="ui equal width grid">
+    <div class="column">
+      <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+    
+      <div class="field">
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+      </div>
+    </div>
+    <div class="column">
+      <div class="field">
+        <%= f.label :user_ids, "Users" %>
+        <%= f.collection_select :user_ids, User.all, :id, :full_name, {}, class: "ui dropdown", multiple: true %>
+      </div>
+    </div>
   </div>
   
   <div class="field">
-    <%= f.label :user_ids, "Users" %>
-    <%= f.collection_select :user_ids, User.all, :id, :full_name, {}, class: "ui dropdown", multiple: true %>
-  </div>
-
-  <div class="actions">
     <%= f.submit "Save", class: "ui blue button" %>
   </div>
 <% end %>

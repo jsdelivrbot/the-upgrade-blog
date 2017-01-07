@@ -11,6 +11,7 @@ class SubscriptionsController < ApplicationController
   # GET /subscriptions/1
   # GET /subscriptions/1.json
   def show
+    @last_post = Post.last
   end
 
   # GET /subscriptions/new

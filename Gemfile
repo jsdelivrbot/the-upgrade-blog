@@ -10,6 +10,7 @@ gem 'bcrypt'
 
 gem 'omniauth', '~> 1.3.1'
 gem 'omniauth-auth0', '~> 1.4.2'
+gem 'gibbon'
 
 gem 'sass-rails', '~> 5.0'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'

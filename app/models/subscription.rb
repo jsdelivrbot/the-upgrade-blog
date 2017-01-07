@@ -5,4 +5,5 @@ class Subscription
   
   field :name
   field :description
+  
 end
