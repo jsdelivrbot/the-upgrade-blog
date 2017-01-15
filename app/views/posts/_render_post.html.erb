@@ -27,7 +27,6 @@
       </div>
     </div>
   </div>
-  <div id="context_<%= post.id.to_s %>">
     <div class="item post">
       <div class="content">
         <a class="header"><%= post.title %></a>
@@ -46,11 +45,9 @@
         </div>
       </div>
     </div>
-  </div>
 </div>
 
 <script>
-  sticky('#context_<%= post.id.to_s %>');
   geekFactor('#geek_factor_<%= post.id.to_s %>', 4);
   addProgressCircle('#time_savings_<%= post.id.to_s %>', <%= post.time_savings * 0.25 %>, 'dollar');
   addProgressCircle('#money_savings_<%= post.id.to_s %>', <%= post.money_savings * 0.25 %>, 'clock');

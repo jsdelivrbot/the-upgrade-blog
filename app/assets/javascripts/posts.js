@@ -15,6 +15,8 @@ $(document).ready(function() {
     $(".edit.icon").toggle();
   });
   
+  $('.ui.sticky').sticky();
+  
 });
 
 // remove upgrade step

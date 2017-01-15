@@ -8,10 +8,6 @@ $(document).ready(function() {
 
 });
 
-function sticky(selector){
-  $('.ui.sticky').sticky({ context: selector });
-}
-
 function geekFactor(selector, factor) {
     $(selector).highcharts({
       chart: {

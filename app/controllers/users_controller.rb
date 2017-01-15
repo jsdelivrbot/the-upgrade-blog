@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    UserMailer.welcome_email(@user).deliver
   end
 
   # POST /users
