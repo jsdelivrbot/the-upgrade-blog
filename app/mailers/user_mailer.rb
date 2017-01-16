@@ -7,6 +7,7 @@ class UserMailer < ApplicationMailer
   end
   
   def send_post(user)
+    @post = Post.published.last
     @user = user
     @url  = 'http://theupgrade.blog'
     mail(to: @user.email, subject: 'Welcome to My Awesome Site')
