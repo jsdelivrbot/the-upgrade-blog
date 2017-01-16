@@ -22,7 +22,6 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    UserMailer.welcome_email(@user).deliver
   end
 
   # POST /users
@@ -64,6 +63,7 @@ class UsersController < ApplicationController
   
   def create_and_subscribe
     if User.create_and_subscribe(params[:email])
+      UserMailer.welcome_email(@user).deliver
       redirect_to root_url
     else
       redirect_to root_url
