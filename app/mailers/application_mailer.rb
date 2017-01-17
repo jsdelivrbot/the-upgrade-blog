@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'admin@theupgrade.blog'
+  default from: 'info@theupgrade.blog'
   layout 'mailer'
 end
 
