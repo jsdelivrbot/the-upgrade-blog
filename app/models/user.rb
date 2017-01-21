@@ -22,7 +22,6 @@ class User
     begin
       user = User.create!(email: email, password: User.generate_random_password)
       user.update_attributes(subscription_ids: [Subscription.first.id])
-      raise user.inspect
       UserMailer.welcome_email(user).deliver
     rescue
     end

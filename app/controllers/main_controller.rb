@@ -2,7 +2,7 @@ class MainController < ApplicationController
   include MainHelper
   
   def index
-    @posts = Post.published
+    # @posts = Post.published
   end
   
   def our_story

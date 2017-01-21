@@ -4,28 +4,7 @@
       <%= image_tag "logo.png" %>
     </h1>
     <h2>Leveraging technology towards real value</h2>
-    <div id="subscribe_form">
-      <%= render "layouts/subscribe_form" %>
-    </div>
+    <h2 style="background-color: #666; padding: 10px; color: white; border-radius: 5px">COMING SOON!</h2>
   </div>
   <div class="bottom right copyright">Copyright: <a href='http://www.123rf.com/profile_belchonock'>belchonock / 123RF Stock Photo</a></div>
 </div>
-
-  <div id="blog_filters" class="ui bottom attached massive three item menu">
-    <%= post_filter("time_savings", "TIME SAVERS", "clock") %>
-    <%= post_filter("money_savings", "MONEY SAVERS", "dollar") %>
-    <%= post_filter("quality_add", "QUALITY ADDS", "leaf") %>
-  </div>
-
-<div id="posts" class="ui vertical segment">
-  
-  <div class="ui container">
-    <div class="ui very relaxed items">
-      <% @posts.each do |post| %>
-        <%= render "posts/render_post", post: post %> 
-      <% end %>
-    </div>
-  </div>
-</div>
-
-<%= render 'layouts/footer' %>
